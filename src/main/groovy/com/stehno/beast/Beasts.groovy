@@ -6,14 +6,16 @@ class Beasts {
 
     Beasts() {
         beast('elk') {
-            attack 'hoof', 'd6'
-            attack 'hoof', 'd6'
-            attack 'antler', 'd8+1'
+            attack 'ram', 'd20+5', 'd6+3'
+            attack 'hooves', 'd20+5', '2d4+3'
         }
-        beast('badger') {
-            attack 'claw', 'd4'
-            attack 'claw', 'd4'
-            attack 'bite', '2d4'
+        beast('giant-badger') {
+            attack 'bite', 'd20+3', 'd6+1'
+            attack 'claw', 'd20+3', '2d4+1'
+        }
+        beast('elephant'){
+            attack 'gore', 'd20+8', '3d8+5'
+            attack 'stomp', 'd20+8', '3d10+5'
         }
     }
 

@@ -3,6 +3,8 @@ package com.stehno.beast
 import groovy.transform.Immutable
 import groovy.transform.TupleConstructor
 
+import static com.stehno.beast.Dice.parse
+
 /**
  * Created by cjstehno on 1/20/17.
  */
@@ -14,7 +16,11 @@ class Beast {
     private final List<Attack> attacks = []
 
     void attack(String type, String damage) {
-        attacks << new Attack(type, Dice.parse(damage))
+        attack type, 'd20', damage
+    }
+
+    void attack(String type, String hit, String damage) {
+        attacks << new Attack(type, parse(hit), parse(damage))
     }
 
     Iterable<Attack> attacks() {
@@ -23,7 +29,7 @@ class Beast {
 
     List<AttackRoll> rolls() {
         attacks.collect { att ->
-            new AttackRoll(att.type, Dice.d20(), att.damage.roll())
+            new AttackRoll(att.type, att.hit.roll(), att.damage.roll())
         }
     }
 }

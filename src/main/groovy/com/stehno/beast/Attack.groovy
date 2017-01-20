@@ -8,9 +8,10 @@ import groovy.transform.Immutable
 @Immutable
 class Attack {
     String type
+    Dice hit
     Dice damage
 
     @Override String toString(){
-        "$type ($damage)"
+        "$type ($hit to hit, $damage damage)"
     }
 }
