@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Available Beasts</title>
+</head>
+<body>
+
+<h1>Available Beasts</h1>
+
+<table cellpadding="4" cellspacing="0" border="1">
+    <tr>
+        <th>Beast</th>
+        <th>Attacks</th>
+    </tr>
+    <% model.beasts.each { beast-> %>
+    <tr>
+        <td><b><a href="/rolls/${beast.name}">${beast.name}</a></b></td>
+        <td>${beast.attacks().join(', ')}</td>
+    </tr>
+    <% } %>
+</table>
+
+</body>
+</html>

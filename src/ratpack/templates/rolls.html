@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Rolls</title>
+</head>
+<body>
+
+<h1>${model.beast.name} Attacks!</h1>
+
+<table border="1" cellspacing="0" cellpadding="4">
+    <tr>
+        <th>Beast</th>
+        <th>Attack</th>
+        <th>d20</th>
+        <th>Damage</th>
+    </tr>
+    <% model.count.times { b->
+        model.beast.rolls().each { roll-> %>
+        <tr>
+            <td><b>${model.beast.name}-${b}</b></td>
+            <td>${roll.type}</td>
+            <td>${roll.hit}</td>
+            <td>${roll.damage}</td>
+        </tr>
+    <%   } %>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+    <% } %>
+</table>
+
+</body>
+</html>
+
