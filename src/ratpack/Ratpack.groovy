@@ -15,12 +15,10 @@ ratpack {
 
     handlers {
         get('roll/:dice/:mod') {
-            def dice = Dice.parse("${pathTokens.dice}+${pathTokens.mod}")
-            render "$dice: ${dice.roll()}"
+            render groovyTemplate('roll.html', dice: Dice.parse("${pathTokens.dice}+${pathTokens.mod}"))
         }
         get('roll/:dice') {
-            def dice = Dice.parse("${pathTokens.dice}")
-            render "$dice: ${dice.roll()}"
+            render groovyTemplate('roll.html', dice: Dice.parse("${pathTokens.dice}"))
         }
 
         get('beasts') {

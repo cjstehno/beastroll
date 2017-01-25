@@ -8,7 +8,7 @@
     <title>Beast roll</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand"><img src="images/d20.png" class="pull-left" style="height: 30px;"/>&nbsp;Beast roll</a>
+                <a href="/" class="navbar-brand"><img src="/images/d20.png" class="pull-left" style="height: 30px;"/>&nbsp;Beast roll</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,22 +44,16 @@
         </div><!-- /.container-fluid -->
     </nav>
 
+    <h1>Rolled ${model.dice} and got ${model.dice.roll()}</h1>
+
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <p>A D&D helper app for rolling multiple attacks for large numbers of summoned beasts.</p>
-
-            <p>Features:</p>
-
-            <p><strong><a href="/beasts">List Available Beasts</a></strong> - display a list of all the beasts available for rolling and generate multiple attach rolls for them.</p>
-
-            <p><strong>Roll arbitrary dice</strong>
-                <form class="form-inline">
-                    <div class="form-group">
-                    <input type="text" class="form-control input-sm" id="dice" name="dice" placeholder="e.g. 2d6+3"/>
-                    </div>
-                    <a id="roll-button" href="#" class="btn btn-sm btn-default">Roll</a>
-                </form>
-            </p>
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="dice" name="dice" value="${model.dice}"/>
+                </div>
+                <a id="roll-button" href="#" class="btn btn-sm btn-default">Roll</a>
+            </form>
         </div>
     </div>
 
@@ -68,7 +62,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 <script type="application/javascript">
     jQuery('#roll-button').click(function(evt){
