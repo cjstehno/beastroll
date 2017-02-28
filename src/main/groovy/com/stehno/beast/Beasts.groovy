@@ -28,7 +28,25 @@ class Beasts {
         beast('brown-bear'){
             attack 'bite', 'd20+5', 'd8+4'
             attack 'claw', 'd20+5', '2d6+4'
-        }         
+        }
+        beast('giant-bat'){
+            attack 'bite', 'd20+4', 'd6+2'
+        }
+        beast('flying-snake'){
+            attack 'bite (poison)', 'd20+6', '3d4+1'
+        }
+        beast('giant-eagle'){
+            attack 'beak', 'd20+5', 'd6+3'
+            attack 'talons', 'd20+5', '2d6+3'
+        }        
+        beast('giant-constrictor-snake'){
+            attack 'bite', 'd20+6', '2d6+4'
+            attack 'contrict', 'd20+6', '2d6+4'
+        }
+        beast('giant-crocodile'){
+            attack 'bite', 'd20+8', '3d10+5'
+            attack 'tail', 'd20+8', '2d8+5'
+        }  
     }
 
     void beast(String name, @DelegatesTo(Beast) Closure closure) {
