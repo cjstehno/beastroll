@@ -56,7 +56,7 @@
                 <% model.beasts.each { beast-> %>
                 <tr>
                     <td><b><a href="/rolls/${beast.name}">${beast.name}</a></b></td>
-                    <td>${beast.attacks().join(', ')}</td>
+                    <td>${beast.attacks().join('<br/>')}</td>
                 </tr>
                 <% } %>
             </table>
