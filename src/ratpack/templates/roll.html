@@ -65,9 +65,7 @@
 <script src="/js/bootstrap.min.js"></script>
 
 <script type="application/javascript">
-    jQuery('#roll-button').click(function(evt){
-        evt.stopPropagation();
-
+    function submitDiceRoll(){
         var dice = jQuery('#dice').val();
         var mod = '';
 
@@ -78,6 +76,19 @@
         }
 
         window.location = "/roll/" + dice + (mod != '' ?  "/" + mod : '');
+    }
+
+    jQuery('#dice').on('keypress', function(evt){
+        if (evt.keyCode == 13) {
+            evt.stopPropagation();
+            submitDiceRoll();
+            return false; // prevent the button click from happening
+        }
+    });
+
+    jQuery('#roll-button').click(function(evt){
+        evt.stopPropagation();
+        submitDiceRoll();
     });
 </script>
 

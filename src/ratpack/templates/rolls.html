@@ -93,9 +93,21 @@
 <script src="/js/bootstrap.min.js"></script>
 
 <script type="application/javascript">
+    function reroll(){
+        window.location = "/rolls/${model.beast.name}/" + jQuery('#count').val();
+    }
+
+    jQuery('#count').on('keypress', function(evt){
+        if (evt.keyCode == 13) {
+            evt.stopPropagation();
+            reroll();
+            return false; // prevent the button click from happening
+        }
+    });
+
     jQuery('#roll-button').click(function(evt){
         evt.stopPropagation();
-        window.location = "/rolls/${model.beast.name}/" + jQuery('#count').val();
+        reroll();
     });
 </script>
 
