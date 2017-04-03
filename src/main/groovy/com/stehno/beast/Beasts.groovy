@@ -53,6 +53,9 @@ class Beasts {
         beast('giant-octopus'){
             attack 'tentacles', 'd20+5', '2d6+3'
         }
+        beast('dire-wolf'){
+            attack 'bite', 'd20+5', '2d6+3' 
+        }
     }
 
     void beast(String name, @DelegatesTo(Beast) Closure closure) {
