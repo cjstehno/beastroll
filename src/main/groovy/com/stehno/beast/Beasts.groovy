@@ -50,6 +50,9 @@ class Beasts {
         beast('reef-shark'){
             attack 'bite', 'd20+4', 'd8+2'
         }
+        beast('giant-octopus'){
+            attack 'tentacles', 'd20+5', '2d6+3'
+        }
     }
 
     void beast(String name, @DelegatesTo(Beast) Closure closure) {
