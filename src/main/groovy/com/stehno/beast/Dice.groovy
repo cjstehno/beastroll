@@ -9,7 +9,7 @@ import java.util.regex.Pattern
 @Immutable
 class Dice {
 
-    private static final Pattern pattern = Pattern.compile('([1-9]*)d([1-9]?[0-9])[+]?([1-9]?)')
+    private static final Pattern pattern = Pattern.compile('([1-9]*)d([1-9]?[0-9]?[0-9])[+]?([1-9]?)')
     private static final Random rng = new SecureRandom()
 
     int rolls
